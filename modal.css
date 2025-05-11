@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Playfair+SC:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=Cormorant+SC:wght@400;700&family=Open+Sans:wght@400;700&family=Open+Sans+Hebrew:wght@400;700&display=swap');
+:root {
+    /* Primary Colors */
+    --green-1: #4a9a32;
+    --green-2: #3b7b28;
+    --green-3: #2d5c1e;
+    --green-4: #1c3a13;
+    --green-5: #0f1f0a;
+
+    --gold-1: #d4af37;
+    --gold-2: #b99727;
+    --gold-3: #977c20;
+    --gold-4: #766019;
+    --gold-5: #544512;
+
+    --cream-1: #FEFDF9;
+    --cream-2: #FCFBF4;
+    --cream-3: #FBF8EE;
+    --cream-4: #F9F6E9;
+    --cream-5: #f8f4e3;
+
+    --charcoal-1: #707070;
+    --charcoal-2: #5c5c5c;
+    --charcoal-3: #474747;
+    --charcoal-4: #2b2b2b;
+    --charcoal-5: #1f1f1f;
+
+    --violet-1: #7d7cb6;
+    --violet-2: #6362a7;
+    --violet-3: #4f4e8c;
+    --violet-4: #3c3b68;
+    --violet-5: #2d2c4e;
+
+    /* Typography */
+    --primary-font-1: 'Playfair Display', serif;
+    --primary-font-2: 'Playfair SC', serif;
+    --primary-font-3: 'Cormorant Garamond', serif;
+    --primary-font-4: 'Cormorant SC', serif;
+
+    --supporting-font-1: 'Open Sans', sans-serif;
+    --supporting-font-2: 'Open Sans Hebrew', sans-serif;
+
+    /* Breakpoints */
+    --breakpoint-phone: 320px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-laptop: 1024px;
+    --breakpoint-desktop: 1280px;
+
+    /* Phone (320px) */
+  --font-h1-phone: 1.75rem;
+  --font-h2-phone: 1.5rem;
+  --font-h3-phone: 1.25rem;
+  --font-p-phone: 1rem;
+  --font-small-phone: 0.875rem;
+  --btn-text-phone: 1.125rem; /* 18px */
+  --btn-text-weight-phone: 600;
+  --btn-text-line-height-phone: 1.4;
+  --btn-padding-phone: 0.75rem 1.5rem;
+  --btn-aspect-ratio-phone: 3 / 1; /* Width is 3 times height, for a rectangular button */
+  --line-height-phone: 1.5; /* 1.5 times the font size for paragraph text */
+  --qr-size-phone: 12rem;   /* 120px */
+  --logo-width-phone: 100px;
+  --footer-copy-phone: 0.75rem;
+  /* Tablet (768px) */
+  --font-h1-tablet: 2rem;
+  --font-h2-tablet: 1.75rem;
+  --font-h3-tablet: 1.5rem;
+  --font-p-tablet: 1.125rem;
+  --font-small-tablet: 1rem;
+  --btn-text-tablet: 1.25rem; /* 20px */
+  --btn-text-weight-tablet: 600;
+  --btn-text-line-height-tablet: 1.4;
+  --btn-padding-tablet: 0.75rem 2rem;
+  --btn-aspect-ratio-tablet: 3 / 1; /* Same aspect ratio for tablet */
+  --line-height-tablet: 1.6; /* 1.6 times the font size for paragraph text */
+  --qr-size-tablet: 16rem;  /* 160px */
+  --logo-width-tablet: 120px;
+  --footer-copy-tablet: 0.875rem;
+  /* Laptop (1024px) */
+  --font-h1-laptop: 2.25rem;
+  --font-h2-laptop: 2rem;
+  --font-h3-laptop: 1.75rem;
+  --font-p-laptop: 1.125rem;
+  --font-small-laptop: 1rem;
+  --btn-text-laptop: 1.375rem; /* 22px */
+  --btn-text-weight-laptop: 600;
+  --btn-text-line-height-laptop: 1.4;
+  --btn-padding-laptop: 0.75rem 2.5rem;
+  --btn-aspect-ratio-laptop: 2 / 1; /* A slightly more rectangular button for laptop */
+  --line-height-laptop: 1.7; /* 1.7 times the font size for paragraph text */
+  --qr-size-laptop: 20rem;  /* 200px */
+  --logo-width-laptop: 140px;
+  --footer-copy-laptop: 1rem;
+  /* Desktop (1280px) */
+  --font-h1-desktop: 2.5rem;
+  --font-h2-desktop: 2.25rem;
+  --font-h3-desktop: 2rem;
+  --font-p-desktop: 1.25rem;
+  --font-small-desktop: 1rem;
+  --btn-text-desktop: 1.5rem; /* 24px */
+  --btn-text-weight-desktop: 700;
+  --btn-text-line-height-desktop: 1.4;
+  --btn-padding-desktop: 0.75rem 3rem;
+  --btn-aspect-ratio-desktop: 2 / 1; /* Same aspect ratio for desktop */
+  --line-height-desktop: 1.8; /* 1.8 times the font size for paragraph text */
+  --qr-size-desktop: 25rem; /* 250px */
+  --logo-width-desktop: 160px;
+  --footer-copy-desktop: 1rem;
+}
+
+.modal {
+    display: none; /* ✅ this hides it initially */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 3rem;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+  }
+  
+  .modal-content {
+    background-color: var(--cream-1);
+    margin: auto;
+    padding: 2rem;
+    max-width: 90vw;
+    min-height: 90vh;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: 768px) {
+    .modal-body {
+    flex-direction: row;
+    }
+    
+  }
+  
+  .modal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  @media screen and (min-width: 768px) {
+    .modal-image {
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+    flex-shrink: 0;
+    }
+    
+  }
+  .modal-text {
+    flex: 1;
+  }
+  
+  .modal-date {
+    font-size: var(--font-h3-phone);
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  @media screen and (min-width: 768px) {
+    .modal-date {
+    font-size: var(--font-h3-tablet);
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .modal-date {
+    font-size: var(--font-h3-laptop);
+    }
+  } 
+  @media screen and (min-width: 1280px) {
+    .modal-date {
+    font-size: var(--font-h3-desktop);
+    }
+  }
+
+  .modal-title {
+    font-size: var(--font-h2-phone);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 13px */
+    letter-spacing: 1.3px;
+    margin: 1rem 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .modal-title {
+    font-size: var(--font-h2-tablet);
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .modal-title {
+    font-size: var(--font-h2-laptop);
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .modal-title {
+    font-size: var(--font-h2-desktop);
+    }
+  }
+  
+
+  .modal-description {
+    font-size: var(--font-p-phone);
+    font-family: var(--supporting-font-1);
+    line-height: var(--line-height-phone);
+    letter-spacing: .6px;
+    margin: 1rem 0;
+  }
+  @media screen and (min-width: 768px) {
+    .modal-description {
+    font-size: var(--font-p-tablet);
+    line-height: var(--line-height-tablet);
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .modal-description {
+    font-size: var(--font-p-laptop);
+    line-height: var(--line-height-laptop);
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .modal-description {
+    font-size: var(--font-p-desktop);
+    line-height: var(--line-height-desktop);
+    }
+  }
+  
+  .badge-modal {
+    font-size: 1.2rem;
+  }
+  
+  .close {
+    color: var(--charcoal-1);
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  .modal-speaker {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 3rem;
+    margin-top: 3rem;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    background-color: var(--cream-5);
+
+  }
+  .modal-speaker-title {
+    color: var(--violet-2);
+    font-family: var(--primary-font-4);
+    font-size: large;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: .1px;
+  }
+  @media screen and (min-width: 768px) {
+    .modal-speaker-title {
+    font-size: x-large
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .modal-speaker-title {
+    font-size: xx-large
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .modal-speaker-title {
+    font-size: xxx-large
+    }
+  }
+  .modal-speaker-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* align-items: center; */
+    /* flex-wrap: wrap; */
+  }
+@media screen and (min-width: 768px) {
+    .modal-speaker-content-wrapper {
+    flex-direction: row;
+    }
+    
+  }
+
+  .modal-speaker-image {
+    width: 100%;
+    height: auto;
+    /* flex-shrink: 0; */
+  }
+@media screen and (min-width: 768px) {
+    .modal-speaker-image {
+    width: 40%;
+    }
+}
+    .modal-speaker-name {
+    color: var(--charcoal-5);
+    font-family: var(--primary-font-3);
+    font-size: var(--font-h1-phone);
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: .5px;
+    padding: 1rem 0 .8rem 0
+    }
+    @media screen and (min-width: 768px) {
+        .modal-speaker-name {
+        font-size: var(--font-h1-tablet);
+        }
+    }
+    @media screen and (min-width: 1024px) {
+        .modal-speaker-name {
+        font-size: var(--font-h1-laptop);
+        }
+    }
+    @media screen and (min-width: 1280px) {
+        .modal-speaker-name {
+        font-size: var(--font-h1-desktop);
+        }
+    }
+
+    .modal-speaker-bio {
+        color: var(--charcoal-3);
+        font-family: var(--primary-font-2);
+        font-size: var(--font-p-phone);
+        font-style: normal;
+        font-weight: 400;
+        line-height: var(--line-height-phone);
+        letter-spacing: 1.56px;
+    }
+    @media screen and (min-width: 768px) {
+        .modal-speaker-bio {
+        font-size: var(--font-p-tablet);
+        line-height: var(--line-height-tablet);
+        }
+    }
+    @media screen and (min-width: 1024px) {
+        .modal-speaker-bio {
+        font-size: var(--font-p-laptop);
+        line-height: var(--line-height-laptop);
+        }
+    }
+    @media screen and (min-width: 1280px) {
+        .modal-speaker-bio {
+        font-size: var(--font-p-desktop);
+        line-height: var(--line-height-desktop);
+        }
+    }

@@ -1,0 +1,900 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Playfair+SC:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=Cormorant+SC:wght@400;700&family=Open+Sans:wght@400;700&family=Open+Sans+Hebrew:wght@400;700&display=swap');
+
+/* Root variables for consistent theming */
+:root {
+    /* Primary Colors */
+    --green-1: #4a9a32;
+    --green-2: #3b7b28;
+    --green-3: #2d5c1e;
+    --green-4: #1c3a13;
+    --green-5: #0f1f0a;
+
+    --gold-1: #d4af37;
+    --gold-2: #b99727;
+    --gold-3: #977c20;
+    --gold-4: #766019;
+    --gold-5: #544512;
+
+    --cream-1: #FEFDF9;
+    --cream-2: #FCFBF4;
+    --cream-3: #FBF8EE;
+    --cream-4: #F9F6E9;
+    --cream-5: #f8f4e3;
+
+    --charcoal-1: #707070;
+    --charcoal-2: #5c5c5c;
+    --charcoal-3: #474747;
+    --charcoal-4: #2b2b2b;
+    --charcoal-5: #1f1f1f;
+
+    --violet-1: #7d7cb6;
+    --violet-2: #6362a7;
+    --violet-3: #4f4e8c;
+    --violet-4: #3c3b68;
+    --violet-5: #2d2c4e;
+
+    /* Typography */
+    --primary-font-1: 'Playfair Display', serif;
+    --primary-font-2: 'Playfair SC', serif;
+    --primary-font-3: 'Cormorant Garamond', serif;
+    --primary-font-4: 'Cormorant SC', serif;
+
+    --supporting-font-1: 'Open Sans', sans-serif;
+    --supporting-font-2: 'Open Sans Hebrew', sans-serif;
+
+    /* Breakpoints */
+    --breakpoint-phone: 320px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-laptop: 1024px;
+    --breakpoint-desktop: 1280px;
+
+    /* Phone (320px) */
+  --font-h1-phone: 1.75rem;
+  --font-h2-phone: 1.5rem;
+  --font-h3-phone: 1.25rem;
+  --font-p-phone: 1rem;
+  --font-small-phone: 0.875rem;
+  --btn-text-phone: 1.125rem; /* 18px */
+  --btn-text-weight-phone: 600;
+  --btn-text-line-height-phone: 1.4;
+  --btn-padding-phone: 0.75rem 1.5rem;
+  --btn-aspect-ratio-phone: 3 / 1; /* Width is 3 times height, for a rectangular button */
+  --line-height-phone: 1.5; /* 1.5 times the font size for paragraph text */
+  --qr-size-phone: 12rem;   /* 120px */
+  --logo-width-phone: 100px;
+  --footer-copy-phone: 0.75rem;
+  /* Tablet (768px) */
+  --font-h1-tablet: 2rem;
+  --font-h2-tablet: 1.75rem;
+  --font-h3-tablet: 1.5rem;
+  --font-p-tablet: 1.125rem;
+  --font-small-tablet: 1rem;
+  --btn-text-tablet: 1.25rem; /* 20px */
+  --btn-text-weight-tablet: 600;
+  --btn-text-line-height-tablet: 1.4;
+  --btn-padding-tablet: 0.75rem 2rem;
+  --btn-aspect-ratio-tablet: 3 / 1; /* Same aspect ratio for tablet */
+  --line-height-tablet: 1.6; /* 1.6 times the font size for paragraph text */
+  --qr-size-tablet: 16rem;  /* 160px */
+  --logo-width-tablet: 120px;
+  --footer-copy-tablet: 0.875rem;
+  /* Laptop (1024px) */
+  --font-h1-laptop: 2.25rem;
+  --font-h2-laptop: 2rem;
+  --font-h3-laptop: 1.75rem;
+  --font-p-laptop: 1.125rem;
+  --font-small-laptop: 1rem;
+  --btn-text-laptop: 1.375rem; /* 22px */
+  --btn-text-weight-laptop: 600;
+  --btn-text-line-height-laptop: 1.4;
+  --btn-padding-laptop: 0.75rem 2.5rem;
+  --btn-aspect-ratio-laptop: 2 / 1; /* A slightly more rectangular button for laptop */
+  --line-height-laptop: 1.7; /* 1.7 times the font size for paragraph text */
+  --qr-size-laptop: 20rem;  /* 200px */
+  --logo-width-laptop: 140px;
+  --footer-copy-laptop: 1rem;
+  /* Desktop (1280px) */
+  --font-h1-desktop: 2.5rem;
+  --font-h2-desktop: 2.25rem;
+  --font-h3-desktop: 2rem;
+  --font-p-desktop: 1.25rem;
+  --font-small-desktop: 1rem;
+  --btn-text-desktop: 1.5rem; /* 24px */
+  --btn-text-weight-desktop: 700;
+  --btn-text-line-height-desktop: 1.4;
+  --btn-padding-desktop: 0.75rem 3rem;
+  --btn-aspect-ratio-desktop: 2 / 1; /* Same aspect ratio for desktop */
+  --line-height-desktop: 1.8; /* 1.8 times the font size for paragraph text */
+  --qr-size-desktop: 25rem; /* 250px */
+  --logo-width-desktop: 160px;
+  --footer-copy-desktop: 1rem;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    
+}
+a {
+    text-decoration: none;
+     border: none;
+}
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    scroll-padding-top: 55px; /* height of your sticky header */
+    overflow-x: hidden;
+  overflow-y: auto; /* or 'scroll' if you always want scrollbar visible */
+}
+
+.header {
+    background-color: var(--cream-2);
+    display: flex;
+    padding: 1rem 1.2rem;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+@media (min-width: 768px) {
+    .header {
+        padding: 1rem 3.2rem;
+}
+}
+.header-left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.header-right-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.logo {
+    width: var(--logo-width-phone); /* 100px for phone */
+    height: auto;
+    cursor: pointer
+}
+@media (min-width: 768px) {
+    .logo {
+        width: var(--logo-width-tablet); /* 120px for tablet */
+    }
+}
+@media (min-width: 1024px) {
+    .logo {
+        width: var(--logo-width-laptop); /* 140px for laptop */
+    }
+}
+@media (min-width: 1280px) {
+    .logo {
+        width: var(--logo-width-desktop); /* 160px for desktop */
+    }
+}
+.header-nav .nav-list {
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-family: var(--primary-font-1);
+    font-size: .9rem;
+    color: var(--charcoal-5);
+    /* transition: color 0.3s ease; */
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2.08px;
+}
+/* Tablet & Laptop mode */
+@media (min-width: 768px) {
+    .nav-list a {
+        font-size: 1.2rem;
+    }
+}
+/* Desktop mode */
+@media (min-width: 1280px) {
+    .nav-list a {
+        font-size: 1.4rem;
+    }
+}
+.header-nav .nav-list a:hover {
+    color: var(--green-1);
+}
+
+.section-btn{
+    display: flex;
+    aspect-ratio: var(--btn-aspect-ratio-phone); /* 3:1 for phone */
+    padding: var(--btn-padding-phone);
+    justify-content: center;
+    align-items: center;
+    justify-self: anchor-center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 1px;
+    background: var(--green-4);
+    cursor: pointer;
+        text-decoration: none;
+    /* transition: background-color 0.3s ease, transform 0.3s ease; */
+
+    color: var(--cream-1);
+    font-family: var(--primary-font-1);
+    font-size: var(--btn-text-phone);
+    font-style: var(--primary-font-1);
+    font-weight: var(--btn-text-weight-phone);
+    line-height: var(--btn-text-line-height-phone)
+}
+@media (min-width: 768px) {
+    .section-btn {
+        width: 10rem;
+        aspect-ratio: var(--btn-aspect-ratio-tablet); /* Adjust aspect ratio for tablet */
+        padding: var(--btn-padding-tablet); /* Adjust padding for tablet */
+        font-size: var(--btn-text-tablet); /* Adjust font size for tablet */
+        font-weight: var(--btn-text-weight-tablet); /* Adjust font weight for tablet */
+        line-height: var(--btn-text-line-height-tablet); /* Adjust line height for tablet */
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-btn {
+        aspect-ratio: var(--btn-aspect-ratio-laptop); /* Adjust aspect ratio for laptop */
+        padding: var(--btn-padding-laptop); /* Adjust padding for laptop */
+        font-size: var(--btn-text-laptop); /* Adjust font size for laptop */
+        font-weight: var(--btn-text-weight-laptop); /* Adjust font weight for laptop */
+        line-height: var(--btn-text-line-height-laptop); /* Adjust line height for laptop */
+    }
+}
+
+@media (min-width: 1280px) {
+    .section-btn {
+        aspect-ratio: var(--btn-aspect-ratio-desktop); /* Adjust aspect ratio for desktop */
+        padding: var(--btn-padding-desktop); /* Adjust padding for desktop */
+        font-size: var(--btn-text-desktop); /* Adjust font size for desktop */
+        font-weight: var(--btn-text-weight-desktop); /* Adjust font weight for desktop */
+        line-height: var(--btn-text-line-height-desktop); /* Adjust line height for desktop */
+    }
+}
+.section-about, .section-programmes, .section-support {
+    min-height: 50vh;
+    background-color: var(--cream-2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+}
+@media screen and (min-width: 768px) {
+    .section-about, .section-programmes, .section-support {
+        padding: 0 1rem  ;
+        /* padding: 2rem 0; */
+    }
+    .section-about{
+        height: 90vh;
+        padding-top: 4rem;
+        flex-direction: row-reverse;
+    }    
+     .section-support {
+        height: 52vh;
+        flex-direction: row-reverse;
+    }
+    .section-programmes{
+        height: 64vh;
+        flex-direction: row;
+    }
+}
+@media screen and (min-width: 1024px) {
+    
+    .section-about{
+        height: 75vh;
+    }    
+     .section-support {
+        height: 50vh;  
+    }
+    .section-programmes{
+        height: 50vh;
+    }
+}
+
+.text-container {
+    padding: 2rem 4rem;
+}
+@media screen and (min-width: 768px) {
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        padding: 1rem 2rem;
+        width: 50%;
+        height: 100%;
+    }
+
+}
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+.title-content{
+    color: var(--violet-3);
+    text-align: center;
+    font-family: var(--primary-font-4);
+    font-size: var(--font-h1-phone); /* 1.75rem; phone mode */ 
+    font-style: normal;
+    font-weight: 300;
+    line-height: var(--line-height-phone)
+}
+/* Tablet (min-width: 768px) */
+@media (min-width: 768px) {
+    .title-content {
+      font-size: var(--font-h1-tablet); /* 2rem */
+      line-height: var(--line-height-tablet)
+    }
+  }
+  
+  /* Laptop (min-width: 1024px) */
+  @media (min-width: 1024px) {
+    .title-content {
+      font-size: var(--font-h1-laptop); /* 2.25rem */
+      line-height: var(--line-height-laptop)
+    }
+  }
+  
+  /* Desktop (min-width: 1280px) */
+  @media (min-width: 1280px) {
+    .title-content {
+      font-size: var(--font-h1-desktop); /* 2.5rem */
+      line-height: var(--line-height-desktop)
+    }
+  }
+.title-content-2{  
+    font-weight: 600;
+    font-size: x-large;
+}
+
+@media (min-width: 1024px) {
+    .title-content-2 {
+        font-size: xx-large
+    }
+}
+.about-icon {
+    width: 1.7rem; /* 17px for phone */
+    aspect-ratio: 1 / 1;
+}
+
+@media (min-width: 768px) {
+    .about-icon {
+        width: 2rem; /* 20px for tablet */
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-icon {
+        width: 2.2rem; /* 22px for laptop */
+    }
+}
+
+@media (min-width: 1280px) {
+    .about-icon {
+        width: 2.5rem; /* 25px for desktop */
+    }
+}
+
+.about-description {
+    color: var(--charcoal-5);
+    font-family: var(--primary-font-1);
+    font-size: var(--font-p-phone);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--line-height-phone); /* 1.5 times the font size for paragraph text */
+    letter-spacing: 1.56px;
+    padding: 2.5rem 0;
+}
+@media (min-width: 768px) {
+    .about-description {
+        font-size: var(--font-p-tablet);
+        line-height: var(--line-height-tablet);
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-description {
+        font-size: var(--font-p-laptop);
+        line-height: var(--line-height-laptop);
+    }
+}
+
+@media (min-width: 1280px) {
+    .about-description {
+        font-size: var(--font-p-desktop);
+        line-height: var(--line-height-desktop);
+    }
+}
+.image-container {
+    padding: 0 0; /* phone */
+    width: 100%;
+    height: 75vh;
+}
+@media (min-width: 768px) {
+    .image-container {
+        padding: 0; 
+        height: 100%;
+        width: 50%; /* 50% width for laptop and up */
+        /* padding: 0 3.5rem; 30px left & right for tablet and up */
+    }
+}
+@media (min-width: 1024px) {
+    .image-container {
+        /* padding: 0; 
+        height: 100%;
+        width: 50%; 50% width for laptop and up */
+    }
+}
+
+.about-image {
+    /* width: 100%; */
+    height: 10rem;
+    border-radius: 5px;
+}
+.about-image-2,.programmes-image-2,.support-image-2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+    background-size: cover;       /* scale image to cover entire container */
+    background-position: center;  /* center the image */
+    background-repeat: no-repeat; /* prevent repeating */
+}
+.about-image-2{
+    background-image: url('assets/images/aboutuscover.png');
+}
+.programmes-image-2 {
+    background-image: url('assets/images/programmescover.png');
+}
+
+.support-image-2 {
+    background-image: url('assets/images/supportcover.png');
+}
+
+.section-programmes-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 2rem 4rem;
+}
+
+.section-programmes-cards-container .title-content{
+    display: flex;
+    height: 574px;
+    padding: 60px 0px 10px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    align-self: stretch;
+}
+
+/* programmes card - start */
+.section-support-2{
+    min-height: 70vh;
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    align-self: stretch;
+    background: var(--cream-4);
+}
+
+.sapling-icon {
+    height: 3.5rem; /* 35px for phone */
+    aspect-ratio: 1 / 1;
+}
+
+@media (min-width: 1024px) {
+    .sapling-icon {
+        height: 4rem; /* 40px for laptop */
+    }
+}
+
+.payment-title,
+.payment-description {
+  color: var(--charcoal-5);
+  font-family: var(--primary-font-1);
+  font-size: var(--font-h3-phone);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--line-height-phone);
+  padding: 1rem;
+}
+.payment-title {
+  letter-spacing: 0.4px;
+}
+.payment-description {
+  letter-spacing: 1px;
+}
+@media (min-width: 768px) {
+    .payment-title,
+    .payment-description {
+      font-size: var(--font-h3-tablet);
+      line-height: var(--line-height-tablet);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .payment-title,
+    .payment-description {
+      font-size: var(--font-h3-laptop);
+      line-height: var(--line-height-laptop);
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .payment-title,
+    .payment-description {
+      font-size: var(--font-h3-desktop);
+      line-height: var(--line-height-desktop);
+    }
+  }
+  
+.payment-description span{
+    font-family: var(--supporting-font-2);
+    letter-spacing: 0.4px;
+}
+
+.qr-image {
+    width: var(--qr-size-phone);
+    height: var(--qr-size-phone);
+  }
+  
+  /* Tablet */
+  @media (min-width: 768px) {
+    .qr-image {
+      width: var(--qr-size-tablet);
+      height: var(--qr-size-tablet);
+    }
+  }
+  
+  /* Laptop */
+  @media (min-width: 1024px) {
+    .qr-image {
+      width: var(--qr-size-laptop);
+      height: var(--qr-size-laptop);
+    }
+  }
+  
+  /* Desktop */
+  @media (min-width: 1280px) {
+    .qr-image {
+      width: var(--qr-size-desktop);
+      height: var(--qr-size-desktop);
+    }
+  }
+  
+
+.footer {
+    display: flex;
+    padding: 1.8rem 7rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+.footer-logo {
+    /* width: 124px;
+    height: 45.107px;
+    aspect-ratio: 124.00/45.11; */
+}
+.footer-copy {
+    color: var(--charcoal-5);
+    text-align: center;
+    font-family: var(--primary-font-1);
+    font-size: var(--footer-copy-phone); /* 0.75rem for phone */    
+    font-style: var(--primary-font-1);
+    font-weight: 500;
+    line-height: var(--line-height-phone); /* 1.5 times the font size for paragraph text */
+    letter-spacing: 0.6px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .footer-copy {
+        font-size: var(--footer-copy-tablet); /* 0.875rem for tablet */
+        line-height: var(--line-height-tablet); /* Adjust line height for tablet */
+    }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+    .footer-copy {
+        font-size: var(--footer-copy-laptop); /* 1rem for laptop */
+        line-height: var(--line-height-laptop); /* Adjust line height for laptop */
+    }
+}
+
+/* Desktop */
+@media (min-width: 1280px) {
+    .footer-copy {
+        font-size: var(--footer-copy-desktop); /* 1rem for desktop */
+        line-height: var(--line-height-desktop); /* Adjust line height for desktop */
+    }
+}
+
+.section-programmes-2{
+    width: 100vw;
+    height: 100vh;
+    padding-right: 1rem;
+    background-image: url('assets/images/sajimon-sahadevan-VaqwgedQ9XM-unsplash.jpg');
+    background-size: cover;         /* Scale image to cover entire area */
+    background-position: center;    /* Center the image */
+    background-repeat: no-repeat;   /* Prevent tiling */
+       position: relative;         /* Needed for the ::before to position properly */
+    overflow: hidden;           /* Prevent blurred edges from overflowing */
+}
+.section-programmes-2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px) brightness(50%);
+    z-index: 0;
+  }
+.section-programmes-2 .header-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+        padding: 2rem 1rem;
+
+    /* padding: 5rem 6rem; for desktop */
+    
+}
+@media screen and (min-width: 768px) {
+    .section-programmes-2 .header-wrapper{
+        padding: 3rem 6rem;
+    }   
+}
+
+.section-programmes-2 .header-title{
+    color: var(--cream-1);
+    text-align: center;
+    font-family: var(--primary-font-4);
+    font-size: large;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 48px */
+    letter-spacing: 0.96px;
+
+    z-index: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .section-programmes-2 .header-title{
+        font-size: x-large
+    }    
+}
+@media screen and (min-width: 1024px) {
+    .section-programmes-2 .header-title{
+        font-size: xx-large
+    }    
+}
+@media screen and (min-width: 1280px) {
+    .section-programmes-2 .header-title{
+        font-size: xxx-large;
+    }    
+}
+select {
+  border: none;
+  outline: none; /* Removes focus ring (optional) */
+  background: none; /* Optional if background is styled elsewhere */
+  -webkit-appearance: none; /* For Safari/Chrome */
+  -moz-appearance: none;    /* For Firefox */
+  appearance: none;
+}
+
+.section-programmes-2 .status-select{
+    text-align: center;        /* horizontally center text */
+    text-align-last: center;   /* for Firefox and modern Chrome */
+     z-index: 1;
+     border: none;
+    /* width: 19rem; */
+    width: 40%;
+    height: 2rem;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--cream-1);
+}
+@media screen and (min-width: 768px) {
+    .section-programmes-2 .status-select{
+        width: 30%;
+        height: 2.5rem;
+    }       
+}
+@media screen and (min-width: 1024px) {
+    .section-programmes-2 .status-select{
+        width: 20%;
+        height: 3rem;
+    }       
+}
+@media screen and (min-width: 1280px) {
+    .section-programmes-2 .status-select{
+        width: 15%;
+        height: 3.5rem;
+    }       
+}
+
+.card-item{
+    list-style: none;
+}
+.card-wrapper{
+    /* max-width: 1100px; */
+    margin: 0 60px 35px;
+}
+.card-list .card-item .card-link{
+    user-select: none;
+    height: 65vh;
+    display: block;
+    background: var(--cream-1);
+    padding: 1.8rem;
+    border-radius: 12px;
+    text-decoration: none;
+
+    border: 2px solid transparent;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+    transition: ease 0.3s;
+}
+
+.card-list .card-item .card-link:hover{
+    border-color:var(--violet-1);  
+}
+
+.card-list .card-item .card-link:active{
+    cursor: grabbing;  
+}
+
+.card-list .card-link .card-image{
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
+.badge-status{
+    padding: .8rem 1.6rem;
+    margin: 1.6rem 0 1.8rem;
+    font-family: var(--primary-font-2);
+    font-size: var(--font-small-phone);     
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: var(--cream-1);
+    width: fit-content;
+    border-radius: 5rem;
+}
+@media screen and (min-width: 768px) {
+    .badge-status{
+        font-size: var(--font-small-tablet);
+    }       
+}
+@media screen and (min-width: 1024px) {
+    .badge-status{
+        font-size: var(--font-small-laptop);
+    }       
+}
+@media screen and (min-width: 1280px) {
+    .badge-status{
+        font-size: var(--font-small-desktop);
+    }       
+}
+
+.upcoming{
+    background: var(--green-1);
+}
+.past{
+    background: var(--gold-1);
+}
+
+
+.card-date {
+    color: var(--charcoal-4);
+    font-family: var(--secondary-font-1);
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 13px */
+    letter-spacing: 1px;
+    margin: 0 0 10px;
+}
+
+.card-wrapper .card-title{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;            /* number of lines before "..." appears */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-wrapper .card-description{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;            /* number of lines before "..." appears */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+.card-title{
+    color: var(--violet-2);
+    font-family: var(--primary-font-3);
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 13px */
+    letter-spacing: 1.3px;
+
+    margin: 10px 0;
+}
+
+.card-description{
+   
+    color: var(--charcoal-5);
+    font-family: var(--supporting-font-1);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 140%; /* 10px */
+    letter-spacing: 1.2px;
+}
+
+.speaker-name, .speaker-bio,.speaker-image{
+    visibility: hidden;
+    display: none;
+  }
+.swiper-pagination{
+    top: 1rem;
+    padding-top: 1rem;
+}
+.swiper-pagination-bullet{
+    height: 13px;
+    width: 13px;
+    background: var(--violet-1);
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active{
+    background: var(--violet-1);
+    opacity: 1;
+}
+
+.swiper-slide-button{
+    color: var(--violet-1);
+    margin-top: -3.5rem;
+
+}
+
+@media screen and (max-width: 768px) {
+    .card-wrapper{
+        margin: 0 10px 25px;
+    }
+    .swiper-slide-button{
+        display: none;
+    }
+    
+    
+}
+
+

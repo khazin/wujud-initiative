@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wujud Initiatives</title>
+     <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
+
+<body>
+    <header class="header">
+        <!-- <div class="header-container"> -->
+        <div class="header-left-container">
+            <a href="#about" class="header-logo-container">    
+                <img src="./assets/logo/wujudlogo.png" alt="Wujud Logo" class="header-logo logo">
+            </a>
+        </div>
+        <div class="header-right-container">          
+        <nav class="header-nav">
+            <ul class="nav-list">
+                <li><a href="#programmes">Programmes</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </nav>
+        </div>
+    <!-- </div> -->
+    </header>
+    <main>
+        <!-- about us section - start -->
+        <section class="section-about" id="about">
+            <div class="text-container">
+            <!-- about us description -->
+            <div class="title-container">
+                <h1 class="title-content">About Us</h1>
+                <img src="assets/icons/scroll.png" alt="scroll icon" class="about-icon scroll-icon">
+            </div>
+            <div class="description-container">
+                <p class="about-description">Formerly known as 'Voyage of Knowledge', we started as a Ground Up Initiative in National University Singapore (NUS) in 2015 with the help of the NUS Muslim Society to provide Islamic Classes with the theme of the intellectual diversity that can raise inspiration and awareness from our predecessors in faith.
+                <br><br>
+                    Today, we aim to provide them to everyone to benefit from it.</p>
+             </div>
+            <!--mission description -->
+            <div class="title-container">
+                <h1 class="title-content">Our Mission</h1>
+                <img src="assets/icons/target.png" alt="target icon" class="about-icon target-icon">
+            </div>
+            <div class="description-container">
+                <p class="about-description">To inspire and make aware of the diversity and heritage left behind by our predecessors in faith</p>
+             </div>
+            <!--vision description -->
+            <div class="title-container">
+                <h1 class="title-content">our vision</h1>
+                <img src="assets/icons/telescope.png" alt="telescope icon" class="about-icon telescope-icon">
+            </div>
+            <div class="description-container">
+                <p class="about-description">To promote intellectual discourse in Islam.</p>
+             </div>
+            </div>
+            <div class="image-container">
+                <div class="about-image-2"></div>
+                <!-- <img src="assets/images/aboutuscover.png" alt="About Us" class="about-image"> -->
+            </div>
+        </section>
+        <!-- about us section - ends -->
+        <!-- programmes section - start -->
+        <section class="section-programmes">
+            <div class="text-container">
+                <div class="title-container">
+                    <h1 class="title-content">Programmes</h1>
+                    <img src="assets/icons/reading.png" alt="reading icon" class="about-icon reading-icon">
+                </div>
+                <div class="description-container">
+                    <p class="about-description">Wujud Initiative arose to meet the needs of Muslims who are looking for an intelllectual appreciation of their faith. 
+                        <br><br>
+                        Our classes cuts across a range of topics, from Islamic intellectual history to ethics and philosophy, theology, Sufism, and contemporary thought.
+                        Browse through all past and upcoming classes offered here at Wujud Initiative. Through our signature events and classes, we hope to satisfy the desired level of discourse on Islam many are seeking. </p>
+                 </div>   
+                 <!-- <button class="section-btn programmes-btn">Browse</button>         -->
+                <a href="#programmes" class="section-btn programmes-btn">Browse</a>
+                
+                </div>
+            <div class="image-container">
+                <!-- <img src="assets/images/programmescover.png" alt="Programmes" class="about-image programmes-image"> -->
+                <div class="programmes-image-2"></div>
+            </div>
+            
+        </section>
+        <!-- programmes section - end -->
+        <!-- support section - start -->
+        <section class="section-support">
+            <div class="text-container">
+                <div class="title-container">
+                    <h1 class="title-content">Support Us</h1>
+                    <img src="assets/icons/sapling.png" alt="sapling icon" class="about-icon sapling-icon">
+                </div>
+                <div class="description-container">
+                    <p class="about-description">We are a non-profit initiative and we rely on the generosity of our supporters to continue our work. 
+                        <br><br>
+                        If you would like to support us, please consider making a donation or volunteering your time.
+                        <br> 
+                        Your support will help us to continue providing high-quality classes and events for the community.</p>
+                 </div>   
+                 <!-- <button class="section-btn support-btn">Donate</button> -->
+                <a href="#support" class="section-btn support-btn">Support</a>
+
+                </div> 
+            <div class="image-container">
+                <div class="support-image-2"></div>
+                
+                <!-- <img src="assets/images/supportcover.png" alt="Support Us" class="about-image support-image"> -->
+            </div>
+        </section>
+        <!-- support section - end -->
+         <section class="section-programmes-2"  id="programmes">
+        <div class="header-wrapper">
+            <h1 class="header-title">Programmes</h1>
+            <select id="status" name="status" class="status-select">
+                <option value="upcoming">Upcoming</option>
+                <option value="past">Past</option>
+              </select>
+        </div>
+        
+    <div class="swiper">
+        <!-- modal - start -->
+        <div id="cardModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <div class="modal-body">
+                <img id="modalImage" src="" alt="" class="modal-image">
+                <div class="modal-text">
+                  <p class="badge-status badge-modal" id="modalBadge"></p>
+                  <p id="modalDate" class="modal-date"></p>
+                  <h2 id="modalTitle" class="modal-title card-title"></h2>
+                  <p id="modalDescription" class="modal-description card-description"></p>
+                </div>
+              </div>
+            <!-- speaker bio -->
+             <div class="modal-speaker">
+                <h2 class="modal-speaker-title">Speaker Bio</h2>
+                <div class="modal-speaker-content-wrapper">
+                    <img id="modalSpeakerImage" src="" alt="" class="modal-speaker-image">
+                    <div class="modal-speaker-content">
+                        <div class="modal-speaker-text">
+                            <h3 id="modalSpeakerName" class="modal-speaker-name"></h3>
+                            <p id="modalSpeakerBio" class="modal-speaker-bio"></p>
+                        </div>
+                    </div>
+                </div>
+             </div>
+
+            </div>
+          </div>
+          
+          
+        <!-- modal - end -->
+        <div class="card-wrapper">
+           <ul class="card-list swiper-wrapper">
+                <li class="card-item swiper-slide">
+                    <a href="" class="card-link">
+                        <div class="text-wrapper">
+                            <img src="assets/images/event1.png" alt="" class="card-image">
+                            <p class="badge-status">Upcoming</p>
+                            <p class="card-date">28th February 2023</p>
+                            <h2 class="card-title">Muslim Thought Leaders in Southeast Asia</h2>
+                            <p class="card-description">
+                                This event touched on the role of thought and ideas in human civilisation. Dr Khairudin shared the developments and accomplishments of Muslim thinkers, their contributions to thought leadership in the creation of a cosmopolitan Southeast Asia.</p>
+                        </div>
+                    </a>                    
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="" class="card-link">
+                        <img src="assets/images/event2.png" alt="" class="card-image">
+                        <p class="badge-status">Upcoming</p>
+                        <p class="card-date">27th January 2023</p>
+                    <h2 class="card-title">Environmental Wisdom For Planet Earth</h2>
+                       <p class="card-description">
+                        We were honored to have Prof Osman share some wisdoms through his book - Environmental Wisdom for Planet Earth.
+                        
+                        We discussed not only the philosophical aspects but practical elements too; and explored ways we can contribute to the environment together as part of the series.
+                    </p>
+                    <h3 id="modalSpeakerName" class="speaker-name"></h3>
+                    <p id="modalSpeakerBio" class="speaker-bio"></p>
+                    <img id="modalSpeakerImage" src="" alt="" class="speaker-image">
+            
+                </a>
+                    
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="" class="card-link">
+                        <img src="assets/images/event3.png" alt="" class="card-image">
+                        <p class="badge-status">Upcoming</p>
+                        <p class="card-date">17th November 2024, 11:00 am - 12:30 pm</p>
+                    <h2 class="card-title">Book Sharing by Dr. Khairudin Aljunied - Contemplating Sufism: Dialogue and Tradition across Southeast Asia</h2>
+                    <p class="card-description">Come join us for a sharing on this upcoming book by Dr Khairudin Aljunied!
+                        Contemplating Sufism: Dialogue and Tradition across Southeast Asia is an upcoming book by Khairudin Aljunied that explores the factors and forces that have enabled Islam to assert and embed itself in Southeast Asia. Using a unique “contemplative histories” methodology, Khairudin Aljunied reveals the multiple undercurrents that continue to influence Sufi thought and practices.</p>
+                        <h3 id="modalSpeakerName" class="speaker-name">Khairudin Aljunied</h3>
+                        <p id="modalSpeakerBio" class="speaker-bio">Khairudin Aljunied is an Associate Professor at the National University of Singapore (NUS) and a Senior Fellow at the Alwaleed Bin Talal Center for Muslim-Christian Understanding at Georgetown University and . He has held visiting professorships at Columbia University, the University of Brunei Darussalam, and the University of Malaya.</p>
+                        <img id="modalSpeakerImage" src="images/speaker.png" alt="" class="speaker-image">
+                
+                    </a>
+                    
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="" class="card-link">
+                        <img src="assets/images/event4.png" alt="" class="card-image">
+                        <p class="badge-status">Ended</p>
+                        <p class="card-date">17th November 2024, 11:00 am - 12:30 pm</p>
+                    <h2 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi unde fugiat earum dicta odio odit mollitia sint et delectus! Error ratione a delectus accusantium saepe id expedita fugiat qui nostrum.</h2>
+                    <p class="card-description">This is a description of the event or card content.</p>
+                    
+                </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="" class="card-link">
+                        <img src="assets/images/event5.png" alt="" class="card-image">
+                        <p class="badge-status">Upcoming</p>
+                        <p class="card-date">17th November 2024, 11:00 am - 12:30 pm</p>
+                    <h2 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi unde fugiat earum dicta odio odit mollitia sint et delectus! Error ratione a delectus accusantium saepe id expedita fugiat qui nostrum.</h2>
+                    <p class="card-description">This is a description of the event or card content.</p>
+                    
+                </a>
+                    
+                </li>
+            </ul>
+            <!-- <div class="swiper-pagination"></div>
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+         -->
+        </div>
+        <div class="swiper-pagination"></div>
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+    </div>
+        </section>
+         <!-- support section 2 - start -->
+          <section class="section-support-2" id="support">
+            <div class="title-container">
+                <h1 class="title-content title-content-2">Support Wujud</h1>
+                <img src="assets/icons/sapling.png" alt="sapling icon" class="sapling-icon">
+            </div>
+                <div class="">
+                    <p class="payment-title">PAYNOW</p> 
+                    <p class="payment-description">UEN: <span>202322963HTWI</span></p> 
+                        
+                </div>
+                 <img src="assets/images/qrcode.png" alt="qr paynow" class="qr-image">
+                </div>
+            </section>
+
+    </main>
+    <footer class="footer">
+        <img src="assets/logo/wujudlogo.png" alt="logo" class="logo footer-logo">
+        <p class="footer-copy">&copy; 2025 Wujud Initiative</p>
+    </footer>
+           <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script src="modal.js"></script>
+            <script src="script.js"></script>
+</body>
+</html>
